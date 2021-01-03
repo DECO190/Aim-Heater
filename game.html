@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head id = 'head'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="display: none;" id = 'result'>
+        <p id = '1'></p>
+        <h1 id = 'result-data' class = 'destaque'>31</h1>
+        <p id = '2'></p>
+    </div> 
+    
+    <div id = 'game-container' style="display: none;">
+        <h1 class = 'notselect' id = 'time'>0</h1>
+        <div id = 'aim' onclick="off()" class="notselect"></div>
+        <span style="display: none;" id = 'clicks'></span>
+        <span id = 'timer' style="display: none;">0</span>
+        <img id = 'suprise-img' src="img/suprise.gif" alt="" style="display: none;">
+    </div>
+
+    <main id = 'menu-container'> 
+        <div id = 'all-container'>
+            <div id = 'form-container'>
+                <div id = 'all-dificult-input'>
+                    <label>Dificuldade: </label>
+                    <div id = 'dificult-input'>
+                        <p>Fácil</p>
+                        <input type="radio"  id="easy_mode" checked name = 'mode' onclick="dificultOff()"> 
+
+                        
+                        
+                        <p>Dificil</p>
+                        <input type="radio"  id="hard_morde" name = 'mode' onclick="dificultOn()">
+                        
+                        <div class = 'mode-options' id = 'easy-options'>
+                            <p>Tempo do treino: (S)</p>
+                            <input id = 'time-train' type="number">
+                        </div>
+                        <div style="display: none;" class = 'mode-options'  id = 'hard-options'>
+                            <p>Velocidade dos alvos: (ms)</p>
+                            <input id = 'time-target' type="number">
+                            <p>Quantidade de alvos: </p>
+                            <input id = 'quant-target' type="number">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="linha"></div>
+
+                <div id = 'all-size-input'>
+                    <label>Tamanho alvos:</label>
+                    <div id = 'size-input'>
+                        <p>Pequeno: </p>
+                        <input id = 'small' type="radio" checked name = 'size' >
+                        <p>Medio: </p>
+                        <input id = 'medium' type="radio" name = 'size'>
+                        <p>Grande: </p>
+                        <input id = 'big' type="radio" name = 'size'>
+                    </div>
+                </div>
+
+                <div class="linha"></div>
+
+                <div id = 'color-input-container'>
+                    <label>Cor do alvo: </label>
+                    <input id = 'color' type="color" value = '#FF7B00'>
+                </div>
+
+                <button id = 'start_button' onclick="main()">COMEÇAR</button>
+            </div>
+        </div>
+
+        
+    </main> 
+
+    <div id = 'sideBar'>
+        <div onclick="history.back()" id = 'arrow-bg'>
+            <img src="img/arrow.svg" alt="">
+        </div>
+        <img onclick = 'booh()' id = 'target-img' src="img/target.svg" alt="">
+    </div>
+
+    <span id = 'quant' style="display: none;"></span>
+    <span id = 'status' style="display: none;">no</span>
+    <span id = 'suprise-click' style="display: none;">0</span>
+    <script src="menu-script.js"></script>
+    <script src="suprise-script.js"></script>
+    <script src="game-script.js"></script>
+</body>
+</html>
